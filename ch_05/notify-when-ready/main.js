@@ -11,7 +11,7 @@ for (let i = 0; i < 4; i++) {
   worker.onmessage = () => {
     console.log(`Ready; id=${i}, count=${--count}, time=${Date.now() - now}ms`);
     if (count === 0) {
-      Atomic.notify(view, 0);
+      Atomics.notify(view, 0);
     }
   };
 }
